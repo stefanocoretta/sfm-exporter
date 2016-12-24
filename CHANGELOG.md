@@ -1,4 +1,4 @@
-# CHANGELOG
+# Change Log
 
 ## [1.1.0] -  2016-12-24
 
