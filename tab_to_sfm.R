@@ -1,9 +1,9 @@
 ######################################
-# xls_to_sfm.R
+# tab_to_sfm.R
 ######################################
-# Copyright 2014 Stefano Coretta
+# Copyright 2016 Stefano Coretta
 #
-# stefanocoretta.info
+# stefanocoretta.altervista.org
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ######################################
-# This script converts a Microsoft Excel .xlsx
+# This script converts a tab delimited file (exported from a spreadsheet)
 # with lexical data to a file with Standard Format Markers (Toolbox/FLEx SIL).
 #
 # Thanks to Hong Ooi and David Arenburg for providing the mapply function
@@ -26,7 +26,7 @@
 # r-subsetting-dataframe-in-for-loop-with-double-and-single-brackets)
 #
 # Input: - a prompt let you choose the lexicon file
-#        - the lexicon file is a Microsoft Excel .xlsx file
+#        - the lexicon file is a tab delimited .txt file
 #        - the name of the columns in the file will be the markers (so, the lexeme
 #          column should be called "\lx", the gloss column "\ge" and so on)
 # Output: - the output file is .txt files named "lexicon-sfm" with SF markers
@@ -36,10 +36,8 @@
 # the presence of unecessary markers.
 #####################################
 
-require(gdata)
-
 # Read the tab file into a data.frame
-lexicon <- read.xls(file.choose(),stringsAsFactors=FALSE)
+lexicon <- read.delim(file.choose(),stringsAsFactors=FALSE)
 
 # Substitute X. prefix in col names with \
 names(lexicon) <- sub("X.", "\\\\", names(lexicon))
@@ -51,6 +49,4 @@ lexicon[] <- mapply(function(x, n) {
 
 cat(file="lexicon-sfm.txt", do.call(paste, c(lexicon, sep="\r\n")), sep="\r\n")
 
-lexicon <- scan(file="lexicon-sfm.txt", what=character(0), sep="\t")
-lexicon <- sub("\\\\lx", "\r\n\\\\lx", lexicon)
-cat(file="lexicon-sfm.txt", lexicon, sep="\r\n")
+rm(lexicon)
