@@ -1,24 +1,11 @@
 ######################################
-# xls_to_sfm.R
+# sfm_exporter.R v2.0.0
 ######################################
-# Copyright 2014 Stefano Coretta
-#
-# stefanocoretta.info
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# MIT Licence
+# Copyright 2016 Stefano Coretta
+# stefanocoretta.altervista.org
 ######################################
-# This script converts a Microsoft Excel .xlsx
+# This script converts a tab delimited file or a Microsoft Excel spreadsheet
 # with lexical data to a file with Standard Format Markers (Toolbox/FLEx SIL).
 #
 # Thanks to Hong Ooi and David Arenburg for providing the mapply function
@@ -26,7 +13,7 @@
 # r-subsetting-dataframe-in-for-loop-with-double-and-single-brackets)
 #
 # Input: - a prompt let you choose the lexicon file
-#        - the lexicon file is a Microsoft Excel .xlsx file
+#        - the lexicon file is a tab delimited .txt or a .xlsx file
 #        - the name of the columns in the file will be the markers (so, the lexeme
 #          column should be called "\lx", the gloss column "\ge" and so on)
 # Output: - the output file is .txt files named "lexicon-sfm" with SF markers
@@ -36,10 +23,18 @@
 # the presence of unecessary markers.
 #####################################
 
+require(tools)
 require(gdata)
 
-# Read the tab file into a data.frame
-lexicon <- read.xls(file.choose(),stringsAsFactors=FALSE)
+# Read the file into a data.frame
+lexicon.file <- file.choose()
+file.ext <- file_ext(lexicon.file)
+
+if (file.ext == "xlsx") {
+    lexicon <- read.xls(lexicon.file,stringsAsFactors=FALSE)
+} else {
+    lexicon <- read.delim(lexicon.file,stringsAsFactors=FALSE)
+}
 
 # Substitute X. prefix in col names with \
 names(lexicon) <- sub("X.", "\\\\", names(lexicon))
@@ -49,8 +44,14 @@ lexicon[] <- mapply(function(x, n) {
   ifelse(x == "", "", paste(n, x))
 }, lexicon, names(lexicon))
 
-cat(file="lexicon-sfm.txt", do.call(paste, c(lexicon, sep="\r\n")), sep="\r\n")
+lapply(
+    apply(lexicon, 1, function (x) {
+        paste(c(x[x != ""]))
+    }),
+    cat,
+    sep = "\n",
+    file="lexicon-sfm.txt",
+    append = TRUE
+)
 
-lexicon <- scan(file="lexicon-sfm.txt", what=character(0), sep="\t")
-lexicon <- sub("\\\\lx", "\r\n\\\\lx", lexicon)
-cat(file="lexicon-sfm.txt", lexicon, sep="\r\n")
+rm(lexicon,lexicon.file,file.ext)

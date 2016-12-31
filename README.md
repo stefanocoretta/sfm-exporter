@@ -1,4 +1,4 @@
-# Spreadsheet/Tab to SFM file (SIL Toolbox/FLEx) [v1.1.0]
+# SFM exporter (Toolbox/FLEx SIL) [v2.0.0]
 
 This repository contains two scripts for converting a file with lexical data to a [Standard Format Markers](http://www-01.sil.org/computing/shoebox/MDF_2000.pdf?_ga=GA1.2.1165924973.1480287656) file (SIL Toolbox/FLEx).
 

@@ -5,7 +5,7 @@ library(shiny)
 shinyUI(fluidPage(
 
   # Application title
-  titlePanel("SFM (Toolbox/FLEx) Document exporter"),
+  titlePanel("SFM exporter (Toolbox/FLEx SIL)"),
 
   sidebarLayout(
     sidebarPanel(

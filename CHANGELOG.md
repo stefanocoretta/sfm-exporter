@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.0.0 - 2016-12-31
+
+### Added
+- shiny app
+
+### Changed
+- change output function to lapply (now empties are skipped in the output)
+- merged `tab` and `xls` scripts
+- change licence to MIT
+
 ## [1.1.0] -  2016-12-24
 
 ### Changed

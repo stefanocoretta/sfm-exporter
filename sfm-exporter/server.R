@@ -14,7 +14,15 @@ shinyServer(function(input, output) {
       lexicon[] <- mapply(function(x, n) {
         ifelse(x == "", "", paste(n, x))
       }, lexicon, names(lexicon))
-       cat(do.call(paste, c(lexicon, sep="\r\n")), file = file, sep="\r\n")
+      lapply(
+          apply(lexicon, 1, function (x) {
+              paste(c(x[x != ""]))
+          }),
+          cat,
+          sep = "\n",
+          file = file,
+          append = TRUE
+      )
     }
   )
   
