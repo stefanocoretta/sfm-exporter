@@ -47,6 +47,14 @@ lexicon[] <- mapply(function(x, n) {
   ifelse(x == "", "", paste(n, x))
 }, lexicon, names(lexicon))
 
-cat(file="lexicon-sfm.txt", do.call(paste, c(lexicon, sep="\r\n")), sep="\r\n")
+lapply(
+    apply(lexicon, 1, function (x) {
+        paste(c(x[x != ""]))
+    }),
+    cat,
+    sep = "\n",
+    file="lexicon-sfm.txt",
+    append = TRUE
+)
 
 rm(lexicon)
