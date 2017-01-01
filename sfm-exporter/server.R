@@ -1,6 +1,8 @@
 # server.R
 
 library(shiny)
+library(tools)
+library(gdata)
 
 shinyServer(function(input, output) {
   output$downloadData <- downloadHandler(

@@ -10,11 +10,12 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
       
-      fileInput("file", label = "Choose file:")
+      fileInput("file", label = "1. Choose file:")
       
     ),
     
     mainPanel(
+        p("2. Click on", strong("Download"), "to download the SFM file."),
       downloadButton("downloadData", label = "Download")
     )
   )
