@@ -1,6 +1,6 @@
 # Change Log
 
-## 2.0.0 - 2016-12-31
+## [2.0.0] - 2016-12-31
 
 ### Added
 - shiny app
@@ -8,9 +8,9 @@
 ### Changed
 - change output function to lapply (now empties are skipped in the output)
 - merged `tab` and `xls` scripts
-- change licence to MIT
+- change license to MIT
 
-## [1.1.0] -  2016-12-24
+## 1.1.0 -  2016-12-24
 
 ### Changed
 - merged with `tab_to_sfm`
@@ -23,4 +23,4 @@
 ### Removed
 - (apparently) useless commands after first `cat()`
 
-[1.1.0]: https://github.com/stefanocoretta/xls_to_sfm/tree/v1.1.0
+[2.0.0]: https://github.com/stefanocoretta/sfm-exporter/compare/v2.0.0...v1.1.0
