@@ -23,4 +23,4 @@
 ### Removed
 - (apparently) useless commands after first `cat()`
 
-[2.0.0]: https://github.com/stefanocoretta/sfm-exporter/compare/v2.0.0...v1.1.0
+[2.0.0]: https://github.com/stefanocoretta/sfm-exporter/compare/v1.1.0...v2.0.0
