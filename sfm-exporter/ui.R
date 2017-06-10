@@ -9,7 +9,8 @@ shinyUI(fluidPage(
 
   sidebarLayout(
     sidebarPanel(
-        p("Click on", code("Browse..."), "and select a", code(".csv"), "file. Then click on", code("Download"), "to download the SFM file.")
+        p("Click on", code("Browse..."), "and select a", code(".csv"), "file. Then click on", code("Download"), "to download the SFM file."),
+        p("Report issues", a("here.", href = "https://github.com/stefanocoretta/sfm-exporter/issues"))
     ),
     mainPanel(
         fileInput("file", label = "1. Choose file"),
