@@ -1,5 +1,5 @@
 ######################################
-# sfm_exporter.R v2.0.0
+# sfm_exporter.R v2.0.1
 ######################################
 # MIT Licence
 # Copyright 2016 Stefano Coretta
@@ -23,8 +23,8 @@
 # the presence of unecessary markers.
 #####################################
 
-require(tools)
-require(gdata)
+library(tools)
+library(gdata)
 
 # Read the file into a data.frame
 lexicon.file <- file.choose()
@@ -33,7 +33,7 @@ file.ext <- file_ext(lexicon.file)
 if (file.ext == "xlsx") {
     lexicon <- read.xls(lexicon.file,stringsAsFactors=FALSE)
 } else {
-    lexicon <- read.delim(lexicon.file,stringsAsFactors=FALSE)
+    lexicon <- read.csv(lexicon.file,stringsAsFactors=FALSE)
 }
 
 # Substitute X. prefix in col names with \

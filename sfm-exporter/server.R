@@ -11,7 +11,7 @@ shinyServer(function(input, output) {
     },
     content = function(file) {
       inFile <- input$file
-      lexicon <- read.delim(inFile$datapath)
+      lexicon <- read.csv(inFile$datapath)
       names(lexicon) <- sub("X.", "\\\\", names(lexicon))
       lexicon[] <- mapply(function(x, n) {
         ifelse(x == "", "", paste(n, x))
