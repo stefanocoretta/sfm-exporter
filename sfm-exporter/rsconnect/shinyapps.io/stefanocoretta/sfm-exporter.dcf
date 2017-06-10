@@ -1,10 +1,10 @@
 name: sfm-exporter
-title:
+title: sfm-exporter
 account: stefanocoretta
 server: shinyapps.io
 appId: 148545
-bundleId: 666117
+bundleId: 861132
 url: https://stefanocoretta.shinyapps.io/sfm-exporter/
-when: 1483298299.59512
+when: 1497099784.41367
 asMultiple: FALSE
 asStatic: FALSE

@@ -1,7 +1,10 @@
 # Change Log
 
-## [2.0.0] - 2016-12-31
+## [2.0.1] - 2017-05-10
+### Fixed
+- fix bug which did not parse the lexicon file correctly
 
+## [2.0.0] - 2016-12-31
 ### Added
 - shiny app
 
@@ -11,16 +14,16 @@
 - change license to MIT
 
 ## 1.1.0 -  2016-12-24
-
 ### Changed
 - merged with `tab_to_sfm`
 
 ## 1.0 - 2016-01-13
-
 ### Added
 - `rm()` to remove created values
 
 ### Removed
 - (apparently) useless commands after first `cat()`
 
+
+[2.0.1]: https://github.com/stefanocoretta/sfm-exporter/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/stefanocoretta/sfm-exporter/compare/v1.1.0...v2.0.0
