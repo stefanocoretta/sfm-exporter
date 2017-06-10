@@ -8,6 +8,9 @@
 # OpenOffice lock files
 .~lock*
 
+# rsconnect folder
+sfm-exporter/rsconnect/
+
 ########
 # R
 ########
