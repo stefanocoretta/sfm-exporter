@@ -13,7 +13,7 @@
 # r-subsetting-dataframe-in-for-loop-with-double-and-single-brackets)
 #
 # Input: - a prompt let you choose the lexicon file
-#        - the lexicon file is a tab delimited .txt or a .xlsx file
+#        - the lexicon file is a tab delimited file (.txt or .tsv), a .csv file, or a .xls/.xlsx (Microsoft Office Excel) file
 #        - the name of the columns in the file will be the markers (so, the lexeme
 #          column should be called "\lx", the gloss column "\ge" and so on)
 # Output: - the output file is .txt files named "lexicon-sfm" with SF markers
@@ -30,10 +30,12 @@ library(gdata)
 lexicon.file <- file.choose()
 file.ext <- file_ext(lexicon.file)
 
-if (file.ext == "xlsx") {
-    lexicon <- read.xls(lexicon.file,stringsAsFactors=FALSE)
-} else {
-    lexicon <- read.csv(lexicon.file,stringsAsFactors=FALSE)
+if (file.ext %in% c("xlsx", "xls")) {
+    lexicon <- gdata::read.xls(lexicon.file, stringsAsFactors=FALSE)
+} else if (file.ext %in% c("txt", "tsv")) {
+    lexicon <- read.delim(lexicon.file, stringsAsFactors=FALSE)
+} else if (file.ext == csv) {
+    lexicon <- read.csv(lexicon.file, stringsAsFactors=FALSE)
 }
 
 # Substitute X. prefix in col names with \

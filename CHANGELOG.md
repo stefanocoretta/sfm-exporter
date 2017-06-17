@@ -1,8 +1,16 @@
 # Change Log
 
 ## Unreleased
+### Added
+- support for both csv and tsv files in script
+- suport for xls files in script
+
 ### Changed
 - update to License year
+
+### Fixed
+- bug which generated wrong output in script
+
 ## [2.0.1] - 2017-05-10
 ### Fixed
 - fix bug which did not parse the lexicon file correctly
