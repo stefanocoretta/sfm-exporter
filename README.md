@@ -9,7 +9,7 @@ The script converts from a tab or comma separated files (`txt`, `.tsv`, `.csv`) 
 
 **Input**:
 - a prompt let you choose the lexicon file
-- the lexicon file is a tab delimited or a Microsoft Excel `.xlsx` file
+- the lexicon file is a comma/tab separated or a Microsoft Excel `.xlsx`/`.xls` file
 - the name of the columns in the file will be the markers (so, the lexeme column should be called `\lx`, the gloss column `\ge` and so on)
 
 **Output**:
