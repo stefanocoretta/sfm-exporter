@@ -4,7 +4,7 @@ This repository contains an `R` script and the code of a Shiny app for convertin
 
 ## The script: `sfm-exporter.R`
 
-The script converts from a tab delimited file (`txt`, `.csv`, `.tsv`) or a Microsoft Excel `.xlsx` file to a plain text `.txt` file with standard format markers.
+The script converts from a tab or comma separated files (`txt`, `.tsv`, `.csv`) or a Microsoft Excel `.xlsx`/`.xls` file to a plain text `.txt` file with standard format markers.
 
 
 **Input**:
