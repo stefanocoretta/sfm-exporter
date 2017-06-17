@@ -1,5 +1,8 @@
 # Change Log
 
+## Unreleased
+### Changed
+- update to License year
 ## [2.0.1] - 2017-05-10
 ### Fixed
 - fix bug which did not parse the lexicon file correctly

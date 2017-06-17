@@ -2,7 +2,7 @@
 # sfm_exporter.R v2.0.1
 ######################################
 # MIT Licence
-# Copyright 2016 Stefano Coretta
+# Copyright 2016-2017 Stefano Coretta
 # stefanocoretta.altervista.org
 ######################################
 # This script converts a tab delimited file or a Microsoft Excel spreadsheet
