@@ -4,6 +4,7 @@
 ### Added
 - support for both csv and tsv files in script
 - suport for xls files in script
+- support for tab separated, comma separated and Excel files in app
 
 ### Changed
 - update to License year

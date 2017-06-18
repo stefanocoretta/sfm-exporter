@@ -11,7 +11,15 @@ shinyServer(function(input, output) {
     },
     content = function(file) {
       inFile <- input$file
-      lexicon <- read.csv(inFile$datapath)
+      
+      if (input$file.ext == "Excel spreadsheet") {
+          lexicon <- gdata::read.xls(inFile$datapath, stringsAsFactors=FALSE)
+      } else if (input$file.ext == "tab separated") {
+          lexicon <- read.delim(inFile$datapath, stringsAsFactors=FALSE)
+      } else if (input$file.ext == "comma separated") {
+          lexicon <- read.csv(inFile$datapath, stringsAsFactors=FALSE)
+      }
+      
       names(lexicon) <- sub("X.", "\\\\", names(lexicon))
       lexicon[] <- mapply(function(x, n) {
         ifelse(x == "", "", paste(n, x))
