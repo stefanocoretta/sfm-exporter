@@ -1,5 +1,5 @@
 ######################################
-# sfm_exporter.R v2.0.1
+# sfm_exporter.R v2.1.0
 ######################################
 # MIT Licence
 # Copyright 2016-2017 Stefano Coretta

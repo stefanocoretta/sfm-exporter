@@ -1,6 +1,6 @@
 # Change Log
 
-## Unreleased
+## [2.1.0] - 2017-06-18
 ### Added
 - support for both csv and tsv files in script
 - suport for xls files in script
@@ -37,5 +37,6 @@
 - (apparently) useless commands after first `cat()`
 
 
+[2.1.0]: https://github.com/stefanocoretta/sfm-exporter/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/stefanocoretta/sfm-exporter/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/stefanocoretta/sfm-exporter/compare/v1.1.0...v2.0.0
