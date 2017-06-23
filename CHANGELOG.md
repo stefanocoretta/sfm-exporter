@@ -4,6 +4,8 @@
 ### Changed
 - each entry is now separated by an empty line for better human readability ([#4][i4])
 
+[i4]: https://github.com/stefanocoretta/sfm-exporter/issues/4
+
 ## [2.1.0] - 2017-06-18
 ### Added
 - support for both csv and tsv files in script
@@ -46,4 +48,3 @@
 [2.0.1]: https://github.com/stefanocoretta/sfm-exporter/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/stefanocoretta/sfm-exporter/compare/v1.1.0...v2.0.0
 
-[i4]: https://github.com/stefanocoretta/sfm-exporter/issues/4
