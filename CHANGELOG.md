@@ -1,5 +1,9 @@
 # Change Log
 
+## [2.2.0] - 2017-06-23
+### Changed
+- each entry is now separated by an empty line for better human readability ([#4][i4])
+
 ## [2.1.0] - 2017-06-18
 ### Added
 - support for both csv and tsv files in script
@@ -37,6 +41,9 @@
 - (apparently) useless commands after first `cat()`
 
 
+[2.2.0]: https://github.com/stefanocoretta/sfm-exporter/compare/v2.1.0...v2.2.0
 [2.1.0]: https://github.com/stefanocoretta/sfm-exporter/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/stefanocoretta/sfm-exporter/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/stefanocoretta/sfm-exporter/compare/v1.1.0...v2.0.0
+
+[i4]: https://github.com/stefanocoretta/sfm-exporter/issues/4

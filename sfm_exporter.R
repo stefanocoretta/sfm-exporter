@@ -43,12 +43,14 @@ names(lexicon) <- sub("X.", "\\\\", names(lexicon))
 
 # Propagate markers, avoid empty cells
 lexicon[] <- mapply(function(x, n) {
-  ifelse(x == "", "", paste(n, x))
+  ifelse(x == "", "xxx", paste(n, x))
 }, lexicon, names(lexicon))
+
+lexicon$n <- ""
 
 lapply(
     apply(lexicon, 1, function (x) {
-        paste(c(x[x != ""]))
+        paste(c(x[x != "xxx"]))
     }),
     cat,
     sep = "\n",
